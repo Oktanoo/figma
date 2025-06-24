@@ -1,0 +1,1371 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #3b6298; /* Warna background di luar layar HP */
+    overflow: hidden; /* Mencegah body scroll */
+}
+
+.container {
+    width: 375px; /* Lebar umum untuk layar HP */
+    height: 812px; /* Tinggi umum untuk layar HP */
+    background-color: #ffffff;
+    border-radius: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Tetap relative untuk page overlay */
+    overflow: hidden; /* Konten di dalam container tidak boleh scroll sendiri, page yang akan scroll */
+}
+
+/* Base Styles untuk Halaman (Welcome, Login, Register, Main Content) */
+.page {
+    width: 100%;
+    height: 100%;
+    position: absolute; /* Tetap absolute untuk transisi antar halaman utama */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0; /* Hapus padding default di sini, biar setiap bagian mengatur padding sendiri */
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    background-color: #ffffff; /* Pastikan setiap halaman punya background sendiri */
+}
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Styles untuk Halaman Depan (Sudah ada) --- */
+#welcomePage {
+    padding: 60px 20px; /* Kembali ke padding awal untuk welcome page */
+    justify-content: center;
+}
+#welcomePage .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    margin-top: 50px;
+}
+
+.microphone-icon {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-text {
+    text-align: left;
+    line-height: 1.1;
+}
+
+.speakers {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.hub {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e53966;
+}
+
+.tagline {
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+}
+
+#welcomePage .title-section {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#welcomePage .main-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+#welcomePage .subtitle {
+    font-size: 18px;
+    color: #666666;
+}
+
+#welcomePage .buttons-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.button {
+    width: 80%;
+    padding: 15px 0;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.primary-button {
+    background-color: #6a95e7;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.primary-button:hover {
+    background-color: #557cd9;
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: #6a95e7;
+    border: none;
+}
+
+.secondary-button:hover {
+    color: #557cd9;
+}
+
+
+/* --- Styles untuk Halaman Login --- */
+#loginPage {
+    justify-content: flex-start;
+    padding-top: 40px; /* Kembali ke padding awal untuk login page */
+}
+
+.login-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.login-card {
+    background-color: #6a95e7;
+    border-radius: 30px;
+    padding: 30px 25px;
+    width: 90%;
+    box-sizing: border-box;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.login-card-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-card-subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.login-form {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.input-field-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 10px 15px;
+}
+
+.input-field-wrapper input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: #333333;
+    padding: 0;
+}
+
+.input-field-wrapper input::placeholder {
+    color: #999999;
+}
+
+.input-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    opacity: 0.7;
+}
+
+.password-toggle {
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.login-button {
+    background-color: #ffffff;
+    color: #6a95e7;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.login-button:hover {
+    background-color: #f0f0f0;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 30px 0 20px 0;
+    color: #6a95e7;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.divider hr {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid rgba(106, 149, 231, 0.5);
+    margin: 0 10px;
+}
+
+.signup-link {
+    font-size: 15px;
+    color: #6a95e7;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    color: #6a95e7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* --- Styles untuk Halaman Register --- */
+#registerPage {
+    justify-content: flex-start;
+    padding-top: 40px; /* Kembali ke padding awal untuk register page */
+}
+
+.register-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.register-card {
+    background-color: #6a95e7;
+    border-radius: 30px;
+    padding: 30px 25px;
+    width: 90%;
+    box-sizing: border-box;
+    text-align: left;
+    color: #ffffff;
+    position: relative;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.register-card-greeting {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0 0 5px 0;
+}
+
+.register-card-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0 0 30px 0;
+}
+
+.close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-icon:hover {
+    opacity: 0.8;
+}
+
+.register-form .input-group label {
+    color: #ffffff;
+}
+
+.register-button {
+    background-color: #3b3b3b;
+    color: #ffffff;
+    margin-top: 35px;
+    width: 100%;
+}
+
+.register-button:hover {
+    background-color: #2a2a2a;
+}
+
+/* --- Styles untuk Halaman Konten Utama Setelah Login/Register (mainContentPage) --- */
+#mainContentPage {
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.dashboard-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eeeeee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.dashboard-header .microphone-icon {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.dashboard-header .logo-text .speakers,
+.dashboard-header .logo-text .hub {
+    font-size: 24px;
+}
+
+.dashboard-header .logo-text .tagline {
+    font-size: 12px;
+}
+
+
+/* Wrapper untuk konten yang bisa di-scroll */
+.scrollable-content-wrapper {
+    width: 100%;
+    height: calc(100% - 80px); /* Tinggi wrapper: total tinggi page - tinggi header (kira-kira) */
+    overflow-y: auto; /* INI YANG MEMBUAT KONTEN DI DALAMNYA BISA DI-SCROLL */
+    -webkit-overflow-scrolling: touch; /* Untuk smooth scrolling di iOS */
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Konten di dalam scrollable-content-wrapper */
+.dashboard-top-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+    background-color: #6a95e7; /* Warna navbar atas */
+    z-index: 10;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.trusted-by-section {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.trusted-by-section h3 {
+    font-size: 16px;
+    color: #888888;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.trusted-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.trusted-logo {
+    height: 25px;
+    width: auto;
+    opacity: 0.7;
+}
+
+.ai-roleplays-section {
+    background-color: #6a95e7;
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.video-card {
+    background-color: #8aaff5;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-placeholder {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-color: #000;
+}
+
+.video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.play-button::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid #6a95e7;
+    margin-left: 5px;
+}
+
+.ai-roleplays-section h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.ai-roleplays-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ai-roleplays-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.why-speak-tech-section {
+    background-color: #3b6298;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.why-speak-tech-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.feature-item p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- Styles untuk Bagian Virtual Experience (BARU) --- */
+.virtual-experience-section {
+    background-color: #f0f0f0; /* Latar belakang abu-abu muda */
+    color: #333333; /* Warna teks gelap */
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    display: flex; /* Untuk menata item secara vertikal */
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience-item {
+    background-color: #ffffff; /* Latar belakang putih untuk setiap kartu */
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px; /* Jarak antar kartu */
+    width: 90%;
+    max-width: 300px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience-image {
+    width: 150px; /* Ukuran gambar orang */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.experience-item h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.explore-button {
+    background-color: #9b51e0; /* Warna ungu sesuai gambar */
+    color: #ffffff;
+    width: 80%; /* Lebar tombol */
+    padding: 12px 0;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #8340c4;
+}
+
+
+/* Scroll Arrows */
+.scroll-arrow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    z-index: 50; /* Pastikan panah di atas konten */
+}
+
+.scroll-arrow:hover {
+    opacity: 1;
+}
+
+/* Panah atas untuk AI Roleplays */
+.ai-roleplays-section .top-arrow {
+    top: 15px;
+    right: 15px;
+    transform: rotate(180deg);
+}
+
+/* Panah atas untuk Why Speak Tech? */
+.why-speak-tech-section .top-arrow {
+    top: 15px;
+    right: 15px;
+    transform: rotate(180deg);
+}
+
+/* Panah bawah untuk Why Speak Tech? (mengarah ke Virtual Experience) */
+.why-speak-tech-section .bottom-arrow {
+    bottom: 15px;
+    right: 15px;
+}
+
+/* Panah atas untuk Virtual Experience */
+.virtual-experience-section .top-arrow {
+    top: 15px;
+    right: 15px;
+    transform: rotate(180deg);
+}
+
+/* Panah bawah untuk Virtual Experience (jika ada konten lagi di bawahnya) */
+.virtual-experience-section .bottom-arrow {
+    bottom: 15px;
+    right: 15px;
+}
+
+
+/* Responsiveness */
+@media (max-width: 400px) {
+    .container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* Perbaikan padding untuk halaman utama agar tetap pas */
+    #welcomePage, #loginPage, #registerPage {
+        padding: 40px 15px;
+    }
+
+    #welcomePage .main-title {
+        font-size: 40px;
+    }
+
+    #welcomePage .subtitle {
+        font-size: 16px;
+    }
+
+    .login-card, .register-card {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    .dashboard-header {
+        padding: 15px;
+    }
+
+    .dashboard-header .microphone-icon {
+        width: 35px;
+    }
+
+    .dashboard-header .logo-text .speakers,
+    .dashboard-header .logo-text .hub {
+        font-size: 20px;
+    }
+
+    .dashboard-header .logo-text .tagline {
+        font-size: 11px;
+    }
+
+
+    .dashboard-top-nav {
+        padding: 10px 0;
+    }
+
+    .nav-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .trusted-by-section,
+    .ai-roleplays-section,
+    .why-speak-tech-section,
+    .virtual-experience-section { /* Tambahkan halaman baru */
+        padding: 25px 15px;
+    }
+
+    .trusted-logos {
+        gap: 15px;
+    }
+
+    .trusted-logo {
+        height: 20px;
+    }
+
+    .ai-roleplays-section h2 {
+        font-size: 24px;
+    }
+
+    .ai-roleplays-section p {
+        font-size: 15px;
+    }
+
+    .why-speak-tech-section h2 {
+        font-size: 24px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk layar sangat kecil */
+        gap: 20px;
+    }
+
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .experience-item {
+        width: 100%; /* Lebar penuh di layar kecil */
+        padding: 20px;
+    }
+
+    .explore-button {
+        width: 90%; /* Tombol lebih lebar di layar kecil */
+    }
+}
+/* ... (CSS yang sudah ada di atas tetap sama) ... */
+
+/* --- Styles untuk Halaman Detail Virtual Reality (BARU) --- */
+#virtualRealityDetailPage {
+    justify-content: flex-start; /* Konten dimulai dari atas */
+    padding: 20px; /* Padding untuk halaman detail */
+    background-color: #ffffff; /* Latar belakang putih */
+}
+
+.detail-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Untuk memposisikan panah dan logo */
+    margin-bottom: 30px;
+    padding-top: 20px; /* Sedikit padding atas agar tidak terlalu mepet */
+}
+
+.detail-header .logo-text {
+    /* Mungkin perlu penyesuaian agar logo tidak terlalu besar di halaman detail */
+    transform: translateX(-15px); /* Geser sedikit ke kiri untuk mengimbangi panah */
+}
+.detail-header .logo-text .speakers,
+.detail-header .logo-text .hub {
+    font-size: 24px; /* Ukuran yang lebih kecil dari welcome page */
+}
+
+.detail-header .logo-text .tagline {
+    font-size: 12px;
+}
+
+
+.back-arrow {
+    width: 28px; /* Ukuran panah kembali */
+    height: auto;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.back-arrow:hover {
+    opacity: 1;
+}
+
+.detail-content {
+    text-align: center;
+    width: 100%;
+    max-width: 320px; /* Batasi lebar konten agar tidak terlalu lebar di layar besar */
+}
+
+.detail-image {
+    width: 250px; /* Ukuran gambar utama di halaman detail */
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.detail-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.detail-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555555;
+    text-align: justify; /* Teks rata kiri-kanan */
+}
+
+/* Responsiveness untuk halaman detail */
+@media (max-width: 400px) {
+    #virtualRealityDetailPage {
+        padding: 15px; /* Kurangi padding di layar kecil */
+    }
+
+    .detail-header {
+        padding-top: 15px;
+    }
+
+    .detail-header .logo-text {
+        transform: translateX(0); /* Hapus pergeseran di layar kecil */
+    }
+
+    .detail-image {
+        width: 200px; /* Ukuran gambar lebih kecil di layar kecil */
+    }
+
+    .detail-content h2 {
+        font-size: 24px;
+    }
+
+    .detail-content p {
+        font-size: 15px;
+    }
+}
+/* Ini adalah bagian dari CSS yang memastikan halaman MR dan Online Exercises
+   menggunakan gaya yang sama dengan halaman Virtual Reality.
+   Jika Anda sudah memiliki bagian ini di style.css Anda,
+   Anda hanya perlu memastikan '#onlineExercisesDetailPage' sudah ditambahkan.
+*/
+#virtualRealityDetailPage,
+#mixedRealityDetailPage,
+#onlineExercisesDetailPage { /* Pastikan ID ini ditambahkan */
+    justify-content: flex-start; /* Konten dimulai dari atas */
+    padding: 20px; /* Padding untuk halaman detail */
+    background-color: #ffffff; /* Latar belakang putih */
+}
+
+/* Gaya untuk header di halaman detail (tombol back, logo) */
+.detail-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Untuk memposisikan panah dan logo */
+    margin-bottom: 30px;
+    padding-top: 20px; /* Sedikit padding atas agar tidak terlalu mepet */
+}
+
+.detail-header .logo-text {
+    /* Transform ini untuk mengimbangi tombol back di kiri, sesuaikan jika tata letak berubah */
+    transform: translateX(-15px);
+}
+.detail-header .logo-text .speakers,
+.detail-header .logo-text .hub {
+    font-size: 24px; /* Ukuran yang lebih kecil dari welcome page */
+}
+
+.detail-header .logo-text .tagline {
+    font-size: 12px;
+}
+
+.back-arrow {
+    width: 28px; /* Ukuran panah kembali */
+    height: auto;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.back-arrow:hover {
+    opacity: 1;
+}
+
+/* Gaya untuk konten utama di halaman detail (gambar, judul, paragraf) */
+.detail-content {
+    text-align: center;
+    width: 100%;
+    max-width: 320px; /* Batasi lebar konten agar tidak terlalu lebar di layar besar */
+}
+
+.detail-image {
+    width: 250px; /* Ukuran gambar utama di halaman detail */
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.detail-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.detail-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555555;
+    text-align: justify; /* Teks rata kiri-kanan */
+}
+
+/* Tambahan baru untuk daftar berurutan di halaman Online Exercises */
+.detail-content ol {
+    text-align: left; /* Pastikan daftar rata kiri */
+    padding-left: 20px; /* Indentasi untuk poin-poin daftar */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555555;
+    margin-top: 15px; /* Jarak dari elemen sebelumnya */
+}
+
+
+/* Bagian responsiveness yang mencakup halaman detail baru */
+@media (max-width: 400px) {
+    /* ... (CSS responsiveness lainnya untuk halaman utama) ... */
+
+    /* Responsiveness untuk halaman detail VR/MR/Online Exercises */
+    #virtualRealityDetailPage,
+    #mixedRealityDetailPage,
+    #onlineExercisesDetailPage { /* Pastikan ID ini ditambahkan */
+        padding: 15px; /* Kurangi padding di layar kecil */
+    }
+
+    .detail-header {
+        padding-top: 15px;
+    }
+
+    .detail-header .logo-text {
+        transform: translateX(0); /* Hapus pergeseran di layar kecil */
+    }
+
+    .detail-image {
+        width: 200px; /* Ukuran gambar lebih kecil di layar kecil */
+    }
+
+    .detail-content h2 {
+        font-size: 24px;
+    }
+
+    .detail-content p, .detail-content ol { /* Sesuaikan juga font size untuk ol */
+        font-size: 15px;
+    }
+}
+/* --- Styles untuk Bagian The learning journey (BARU) --- */
+.learning-journey-section {
+    background-color: #3b6298; /* Latar belakang ungu gelap */
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.learning-journey-section h2 {
+    font-size: 32px; /* Ukuran judul utama */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.learning-journey-section .subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.journey-step {
+    background-color: #557cd9; /* Warna latar belakang untuk setiap langkah */
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px; /* Jarak antar langkah */
+    width: 90%;
+    max-width: 300px; /* Batasi lebar kartu langkah */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.journey-step:last-child {
+    margin-bottom: 0; /* Hapus margin bawah pada langkah terakhir */
+}
+
+.journey-image {
+    width: 180px; /* Ukuran gambar di setiap langkah */
+    height: auto;
+    border-radius: 15px; /* Sedikit radius pada gambar */
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.journey-step h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.journey-step p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsiveness untuk bagian ini */
+@media (max-width: 400px) {
+    .learning-journey-section {
+        padding: 30px 15px;
+    }
+
+    .learning-journey-section h2 {
+        font-size: 28px;
+    }
+
+    .learning-journey-section .subtitle {
+        font-size: 15px;
+    }
+
+    .journey-step {
+        padding: 20px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .journey-image {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .journey-step h3 {
+        font-size: 20px;
+    }
+
+    .journey-step p {
+        font-size: 14px;
+    }
+}
+/* --- Styles untuk Bagian What our customers think of VirtualSpeech (BARU) --- */
+.customer-reviews-section {
+    background-color: #554488; /* Warna latar belakang ungu tua */
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.customer-reviews-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+.review-item {
+    margin-bottom: 40px; /* Jarak antar testimoni */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.reviewer-image {
+    width: 80px; /* Ukuran gambar profil */
+    height: 80px;
+    border-radius: 50%; /* Membuat gambar lingkaran */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.5); /* Border di sekitar gambar */
+}
+
+.review-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.reviewer-title {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+}
+
+.separator {
+    width: 50px;
+    height: 3px;
+    background-color: #9b51e0; /* Warna ungu untuk pemisah */
+    margin: 0 auto 20px auto;
+    border-radius: 2px;
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0 10px; /* Padding samping untuk teks testimoni */
+}
+
+/* Responsiveness untuk bagian ini */
+@media (max-width: 400px) {
+    .customer-reviews-section {
+        padding: 30px 15px;
+    }
+
+    .customer-reviews-section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .review-item {
+        margin-bottom: 30px;
+    }
+
+    .reviewer-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .review-item h3 {
+        font-size: 16px;
+    }
+
+    .reviewer-title {
+        font-size: 13px;
+    }
+
+    .separator {
+        width: 40px;
+        margin-bottom: 15px;
+    }
+
+    .review-text {
+        font-size: 14px;
+        padding: 0 5px;
+    }
+}
+/* --- Styles untuk Bagian Speak Tech All Access (BARU) --- */
+.all-access-section {
+    background-color: #9b51e0; /* Warna latar belakang ungu */
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.all-access-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.all-access-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+}
+
+.all-access-section h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.all-access-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 40px auto;
+    max-width: 280px; /* Batasi lebar daftar */
+    text-align: left; /* Rata kiri untuk item daftar */
+}
+
+.all-access-section ul li {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: #ffffff;
+}
+
+.all-access-section .list-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    flex-shrink: 0; /* Pastikan ikon tidak menyusut */
+}
+
+/* --- Styles untuk Footer (BARU) --- */
+.main-footer {
+    background-color: #3b3b3b; /* Warna latar belakang footer */
+    color: #ffffff;
+    padding: 40px 20px 20px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap; /* Memungkinkan kolom untuk wrap di layar kecil */
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1 1 45%; /* Dua kolom per baris di layar sedang */
+    min-width: 150px; /* Lebar minimum untuk setiap kolom */
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #e53966; /* Warna pink untuk judul kolom */
+    text-transform: uppercase;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-bottom a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #ffffff;
+}
+
+/* Responsiveness untuk bagian ini */
+@media (max-width: 400px) {
+    .all-access-section {
+        padding: 30px 15px;
+    }
+
+    .all-access-section h2 {
+        font-size: 28px;
+    }
+
+    .all-access-section p {
+        font-size: 15px;
+    }
+
+    .all-access-section h3 {
+        font-size: 20px;
+    }
+
+    .all-access-section ul {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .all-access-section ul li {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .list-icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+    }
+
+    .main-footer {
+        flex-direction: column; /* Ubah menjadi satu kolom di layar kecil */
+        align-items: center;
+        gap: 20px;
+        padding: 30px 15px 15px 15px;
+    }
+
+    .footer-column {
+        flex: 1 1 100%; /* Satu kolom penuh */
+        text-align: center; /* Pusatkan teks */
+        min-width: unset;
+    }
+
+    .footer-column h4 {
+        margin-bottom: 15px;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+        margin-top: 30px;
+        padding-top: 15px;
+        font-size: 11px;
+    }
+}

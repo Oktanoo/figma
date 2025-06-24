@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak Tech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="welcomePage" class="page active">
+            <div class="header">
+                <img src="microphone.png" alt="Microphone Icon" class="microphone-icon">
+                <div class="logo-text">
+                    <span class="speakers">speakers</span><span class="hub">hub</span>
+                    <div class="tagline">PUBLIC SPEAKING CLUB</div>
+                </div>
+            </div>
+            <div class="title-section">
+                <div class="main-title">Speak Tech</div>
+                <div class="subtitle">Public Speaking Digital Coach</div>
+            </div>
+            <div class="buttons-section">
+                <button class="button primary-button" id="masukBtn">Masuk</button>
+                <button class="button secondary-button" id="daftarWelcomeBtn">Daftar</button>
+            </div>
+        </div>
+
+        <div id="loginPage" class="page">
+            <div class="login-header">
+                <img src="microphone.png" alt="Microphone Icon" class="microphone-icon">
+                <div class="logo-text">
+                    <span class="speakers">speakers</span><span class="hub">hub</span>
+                    <div class="tagline">PUBLIC SPEAKING CLUB</div>
+                </div>
+            </div>
+            <div class="login-card">
+                <h1 class="login-card-title">Speak Tech</h1>
+                <p class="login-card-subtitle">Public Speaking Digital Coach</p>
+
+                <form class="login-form">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <div class="input-field-wrapper">
+                            <img src="mail-icon.png" alt="Email Icon" class="input-icon">
+                            <input type="email" id="email" placeholder="Enter your email">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-field-wrapper">
+                            <img src="lock-icon.png" alt="Lock Icon" class="input-icon">
+                            <input type="password" id="password" placeholder="Enter Password">
+                            <img src="eye-icon.png" alt="Toggle Password Visibility" class="input-icon password-toggle">
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="button login-button" id="loginSubmitBtn">Login</button>
+                </form>
+
+                <div class="divider">
+                    <hr>
+                    <span>or continue with</span>
+                    <hr>
+                </div>
+
+                <div class="signup-link">
+                    Don't have an account? <a href="#" id="signupLoginBtn">Signup</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="registerPage" class="page">
+            <div class="register-header">
+                <img src="microphone.png" alt="Microphone Icon" class="microphone-icon">
+                <div class="logo-text">
+                    <span class="speakers">speakers</span><span class="hub">hub</span>
+                    <div class="tagline">PUBLIC SPEAKING CLUB</div>
+                </div>
+            </div>
+            <div class="register-card">
+                <h2 class="register-card-greeting">Hello_</h2>
+                <h1 class="register-card-title">Register</h1>
+                <span class="close-icon" id="closeRegisterBtn">&times;</span> <form class="register-form">
+                    <div class="input-group">
+                        <label for="reg-username-email">Username/Email</label>
+                        <div class="input-field-wrapper">
+                            <img src="mail-icon.png" alt="Email Icon" class="input-icon">
+                            <input type="text" id="reg-username-email" value="sarageemal@joss">
+                            <img src="eye-icon.png" alt="View Icon" class="input-icon">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-password">Password</label>
+                        <div class="input-field-wrapper">
+                            <img src="lock-icon.png" alt="Lock Icon" class="input-icon">
+                            <input type="password" id="reg-password" placeholder="password">
+                            <img src="eye-icon.png" alt="Toggle Password Visibility" class="input-icon password-toggle">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-confirm-password">Confirm Password</label>
+                        <div class="input-field-wrapper">
+                            <img src="lock-icon.png" alt="Lock Icon" class="input-icon">
+                            <input type="password" id="reg-confirm-password" placeholder="confirm password">
+                            <img src="eye-icon.png" alt="Toggle Password Visibility" class="input-icon password-toggle">
+                        </div>
+                    </div>
+                    <button type="submit" class="button register-button" id="registerSubmitBtn">Register</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="mainContentPage" class="page">
+            <div class="dashboard-header">
+                <img src="microphone.png" alt="Microphone Icon" class="microphone-icon">
+                <div class="logo-text">
+                    <span class="speakers">speakers</span><span class="hub">hub</span>
+                    <div class="tagline">PUBLIC SPEAKING CLUB</div>
+                </div>
+            </div>
+
+            <div class="scrollable-content-wrapper">
+                <div class="dashboard-top-nav">
+                    <img src="icon-placeholder-1.png" alt="Nav Icon" class="nav-icon">
+                    <img src="icon-placeholder-2.png" alt="Nav Icon" class="nav-icon">
+                    <img src="icon-placeholder-3.png" alt="Nav Icon" class="nav-icon">
+                    <img src="icon-placeholder-4.png" alt="Nav Icon" class="nav-icon">
+                    <img src="icon-placeholder-5.png" alt="Nav Icon" class="nav-icon">
+                    <img src="icon-placeholder-6.png" alt="Nav Icon" class="nav-icon">
+                </div>
+
+                <div class="trusted-by-section">
+                    <h3>Trusted By</h3>
+                    <div class="trusted-logos">
+                        <img src="logo-tmobile.png" alt="T-Mobile" class="trusted-logo">
+                        <img src="logo-meta.png" alt="Meta" class="trusted-logo">
+                        <img src="logo-vodafone.png" alt="Vodafone" class="trusted-logo">
+                        <img src="logo-deutsche-telekom.png" alt="Deutsche Telekom" class="trusted-logo">
+                        <img src="logo-bbc.png" alt="BBC" class="trusted-logo">
+                        <img src="logo-pwc.png" alt="PwC" class="trusted-logo">
+                    </div>
+                </div>
+
+                <div class="ai-roleplays-section">
+                    <img src="arrow-up.png" alt="Scroll Up" class="scroll-arrow top-arrow" id="scrollToTopAI">
+                    <div class="video-card">
+                        <div class="video-placeholder">
+                            <img src="virtual-speech-thumbnail.png" alt="Virtual Speech Thumbnail" class="video-thumbnail">
+                            <div class="play-button"></div>
+                        </div>
+                        <h3>Virtual Speech</h3>
+                    </div>
+                    <h2>AI-Powered Roleplays</h2>
+                    <p>Practice in over 35 roleplays enhanced with AI, including difficult conversations, sales pitches, interviews, negotiations, and debating.</p>
+                </div>
+
+                <div class="why-speak-tech-section">
+                    <img src="arrow-up.png" alt="Scroll Up" class="scroll-arrow top-arrow" id="scrollToTopWhy">
+                    <h2>Why Speak Tech?</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <img src="icon-bulb.png" alt="Bulb Icon" class="feature-icon">
+                            <h3>Proven success</h3>
+                            <p>Join over 550,000 people from 80+ countries using VirtualSpeech to upskill themselves.</p>
+                        </div>
+                        <div class="feature-item">
+                            <img src="icon-book.png" alt="Book Icon" class="feature-icon">
+                            <h3>Learn by doing</h3>
+                            <p>With over 55 hands-on VR/AI exercises, you'll improve your skills up to 4x faster.</p>
+                        </div>
+                        <div class="feature-item">
+                            <img src="icon-ai-feedback.png" alt="AI Feedback Icon" class="feature-icon">
+                            <h3>AI feedback</h3>
+                            <p>After each practice...</p>
+                        </div>
+                        <div class="feature-item">
+                            <img src="icon-boost-career.png" alt="Boost Career Icon" class="feature-icon">
+                            <h3>Boost your career</h3>
+                            <p>Our accredited...</p>
+                        </div>
+                    </div>
+                    <img src="arrow-down.png" alt="Scroll Down" class="scroll-arrow bottom-arrow" id="scrollToVirtualExperience">
+                </div>
+
+                <div class="virtual-experience-section">
+                    <img src="arrow-up.png" alt="Scroll Up" class="scroll-arrow top-arrow" id="scrollToTopVirtualExperience">
+                    <div class="experience-item">
+                        <img src="image-vr.png" alt="Virtual Reality" class="experience-image">
+                        <h3>Virtual Reality</h3>
+                        <button class="button explore-button" id="exploreVrBtn">Explore VR</button>
+                    </div>
+                    <div class="experience-item">
+                        <img src="image-mr.png" alt="Mixed Reality" class="experience-image">
+                        <h3>Mixed Reality</h3>
+                        <button class="button explore-button" id="exploreMrBtn">Explore MR</button>
+                    </div>
+                    <div class="experience-item">
+                        <img src="image-online.png" alt="Online Exercises" class="experience-image">
+                        <h3>Online Exercises</h3>
+                        <button class="button explore-button" id="viewOnlineExercisesBtn">View Exercises</button>
+                    </div>
+                    <img src="arrow-down.png" alt="Scroll Down" class="scroll-arrow bottom-arrow" id="scrollToLearningJourney">
+                </div>
+
+                <div class="learning-journey-section">
+                    <img src="arrow-up.png" alt="Scroll Up" class="scroll-arrow top-arrow" id="scrollToTopLearningJourney">
+                    <h2>The learning journey</h2>
+                    <p class="subtitle">Our blended courses combine e-learning with practice and feedback.</p>
+
+                    <div class="journey-step">
+                        <img src="learning-journey-step1.png" alt="Learn workplace skills" class="journey-image">
+                        <h3>Learn workplace skills</h3>
+                        <p>Courses on presentation skills, leadership, sales, and more. These teach you fundamental workplace skills.</p>
+                    </div>
+
+                    <div class="journey-step">
+                        <img src="learning-journey-step2.png" alt="Practice what you learn" class="journey-image">
+                        <h3>Practice what you learn</h3>
+                        <p>Apply your learning with AI-powered practice scenarios, either online or in VR/MR.</p>
+                    </div>
+
+                    <div class="journey-step">
+                        <img src="learning-journey-step3.png" alt="Get instant feedback" class="journey-image">
+                        <h3>Get instant feedback</h3>
+                        <p>Receive instant feedback after each practice session so you can easily identify areas to improve.</p>
+                    </div>
+                    <img src="arrow-down.png" alt="Scroll Down" class="scroll-arrow bottom-arrow" id="scrollToCustomerReviews">
+                </div>
+
+                <div class="customer-reviews-section">
+                    <img src="arrow-up.png" alt="Scroll Up" class="scroll-arrow top-arrow" id="scrollToTopCustomerReviews">
+                    <h2>What our customers think of VirtualSpeech</h2>
+
+                    <div class="review-item">
+                        <img src="gema-molebo.png" alt="Gema Molebo" class="reviewer-image">
+                        <h3>GEMA MOLEBO</h3>
+                        <p class="reviewer-title">IE University</p>
+                        <div class="separator"></div>
+                        <p class="review-text">"We have integrated VirtualSpeech as an essential component to our storytelling classes across the university, and the results have been very positive. VirtualSpeech has been a valuable addition, making learning more immersive and effective."</p>
+                    </div>
+
+                    <div class="review-item">
+                        <img src="jaime-donnally.png" alt="Jaime Donnally" class="reviewer-image">
+                        <h3>JAIME DONNALLY</h3>
+                        <p class="reviewer-title">EdTech Consultant</p>
+                        <div class="separator"></div>
+                        <p class="review-text">"I found VirtualSpeech to be an incredibly innovative way to improve confidence, practice skills, and get the right feedback necessary to improve my skills."</p>
+                    </div>
+
+                    <div class="review-item">
+                        <img src="tony-delluca.png" alt="Tony DeLuca" class="reviewer-image">
+                        <h3>TONY DELUCA</h3>
+                        <p class="reviewer-title">Central Connecticut State University</p>
+                        <div class="separator"></div>
+                        <p class="review-text">"After starting Virtual Speech with our evening program, we have expanded into several other academic departments and partnered with our Career Development Office. The variety of scenarios, and the fact that you can jump right in and get immersive, makes it very easy to provide a wide array of soft skills training to our student body."</p>
+                    </div>
+                    <img src="arrow-down.png" alt="Scroll Down" class="scroll-arrow bottom-arrow" id="scrollToAllAccess">
+                </div>
+
+                <div class="all-access-section">
+                    <img src="arrow-up.png" alt="Scroll Up" class="scroll-arrow top-arrow" id="scrollToTopAllAccess">
+                    <h2>Speak Tech All Access</h2>
+                    <p>Subscribe now for unlimited learning, wherever and whenever you want.</p>
+                    <p class="description">Gain digital certificates, learn at your own pace, and get access to premium features to help you develop your public speaking skills.</p>
+
+                    <h3>Unlimited Access</h3>
+                    <ul>
+                        <li><img src="check-icon.png" alt="Check" class="list-icon"> Interactive Courses</li>
+                        <li><img src="check-icon.png" alt="Check" class="list-icon"> AI-powered feedback with FaceMetrics</li>
+                        <li><img src="check-icon.png" alt="Check" class="list-icon"> AI and ChatGPT-powered exercises</li>
+                        <li><img src="check-icon.png" alt="Check" class="list-icon"> Boost your career prospects</li>
+                        <li><img src="check-icon.png" alt="Check" class="list-icon"> Cancel anytime</li>
+                    </ul>
+                </div>
+
+                <footer class="main-footer">
+                    <div class="footer-column">
+                        <h4>PLATFORM</h4>
+                        <ul>
+                            <li><a href="#">AI Roleplays</a></li>
+                            <li><a href="#">Recording Studio</a></li>
+                            <li><a href="#">AI Interview Practice</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">LMS & Assessment</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>RESOURCES</h4>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Webinars</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>LINKS</h4>
+                        <ul>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Affiliates</a></li>
+                            <li><a href="#">Newsletter</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>SUPPORT</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Platform Video Tour</a></li>
+                            <li><a href="#">Live Demos</a></li>
+                            <li><a href="#">Supported VR Headsets</a></li>
+                            <li><a href="#">Download VR/AR App</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Speak Tech.</p>
+                        <p><a href="#">Terms</a> | <a href="#">Privacy</a> | <a href="#">Accessibility</a> | <a href="#">Login/Signup</a></p>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+
+        <div id="virtualRealityDetailPage" class="page">
+            <div class="detail-header">
+                <img src="arrow-left.png" alt="Back Arrow" class="back-arrow" id="backToMainContentFromVr">
+                <div class="logo-text">
+                    <span class="speakers">speakers</span><span class="hub">hub</span>
+                    <div class="tagline">PUBLIC SPEAKING CLUB</div>
+                </div>
+            </div>
+            <div class="detail-content">
+                <img src="image-vr.png" alt="Virtual Reality Image" class="detail-image">
+                <h2>Virtual Reality</h2>
+                <p>Virtual Reality (VR) adalah teknologi yang memungkinkan pengguna untuk masuk dan berinteraksi dengan lingkungan yang disimulasikan secara digital seolah-olah mereka benar-benar berada di dalamnya. Lingkungan ini bisa berupa dunia yang sepenuhnya imajinatif (seperti dunia game fantasi) atau representasi dari dunia nyata.</p>
+            </div>
+        </div>
+
+        <div id="mixedRealityDetailPage" class="page">
+            <div class="detail-header">
+                <img src="arrow-left.png" alt="Back Arrow" class="back-arrow" id="backToMainContentFromMr">
+                <div class="logo-text">
+                    <span class="speakers">speakers</span><span class="hub">hub</span>
+                    <div class="tagline">PUBLIC SPEAKING CLUB</div>
+                </div>
+            </div>
+            <div class="detail-content">
+                <img src="image-mr.png" alt="Mixed Reality Image" class="detail-image">
+                <h2>Mixed Reality</h2>
+                <p>Mixed Reality (MR) atau Realitas Campuran adalah teknologi yang menggabungkan dunia nyata dan dunia virtual, sehingga objek digital dan fisik bisa berinteraksi secara real-time. Bisa dibilang MR adalah penggabungan dari Virtual Reality (VR) dan Augmented Reality (AR).</p>
+            </div>
+        </div>
+
+        <div id="onlineExercisesDetailPage" class="page">
+            <div class="detail-header">
+                <img src="arrow-left.png" alt="Back Arrow" class="back-arrow" id="backToMainContentFromOnlineExercises">
+                <div class="logo-text">
+                    <span class="speakers">speakers</span><span class="hub">hub</span>
+                    <div class="tagline">PUBLIC SPEAKING CLUB</div>
+                </div>
+            </div>
+            <div class="detail-content">
+                <img src="image-online.png" alt="Online Exercises Image" class="detail-image">
+                <h2>Online Exercises</h2>
+                <p>"View exercises" berarti melihat atau membuka latihan yang tersedia, dan maknanya bisa berbeda tergantung konteks:</p>
+                <ol style="text-align: left; padding-left: 20px; font-size: 16px; line-height: 1.6; color: #555555;">
+                    <li>Dalam pembelajaran online: Digunakan untuk melihat soal atau tugas latihan sebelum dikerjakan.</li>
+                    <li>Dalam pemrograman/web development: Mengacu pada fungsi atau halaman yang menampilkan daftar latihan kepada pengguna.</li>
+                    <li>Dalam konteks umum atau aplikasi kebugaran: Mengacu pada melihat berbagai jenis latihan fisik atau olahraga.</li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
